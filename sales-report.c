@@ -1,4 +1,3 @@
-// Including necessary libraries
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -11,11 +10,12 @@ void printSalesSummary(double sales[]);
 void printMovingAverages(double sales[]);
 void printSalesHighToLow(double sales[]);
 
+    // Array of month names
+const char *months[MONTHS] = {"January", "February", "March", "April", "May", "June", 
+                                  "July", "August", "September", "October", "November", "December"};
+
 // Function to get the month's name from its index
 const char* getMonthName(int index) {
-    // Array of month names
-    const char *months[MONTHS] = {"January", "February", "March", "April", "May", "June", 
-                                  "July", "August", "September", "October", "November", "December"};
     return months[index];
 }
 
@@ -48,8 +48,6 @@ void printMonthlyReport(double sales[]) {
     printf("Monthly sales report for 2022:\n");
     printf("Month Sales\n");
     // Array of month names
-    const char *months[MONTHS] = {"January", "February", "March", "April", "May", "June", 
-                                  "July", "August", "September", "October", "November", "December"};
     for (int i = 0; i < MONTHS; i++) {
         printf("%-10s $%.2lf\n", months[i], sales[i]);
     }
